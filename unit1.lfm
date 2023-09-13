@@ -34,12 +34,18 @@ object Form1: TForm1
     ParentColor = False
   end
   object LabelC: TLabel
-    Left = 24
-    Height = 20
-    Top = 88
-    Width = 23
+    Left = 32
+    Height = 28
+    Top = 80
+    Width = 32
     Caption = 'C ='
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -20
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
     ParentColor = False
+    ParentFont = False
   end
   object Label5: TLabel
     Left = 104
