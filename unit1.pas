@@ -25,7 +25,9 @@ type
     LabelC: TLabel;
     Label5: TLabel;
     ArrTable: TStringGrid;
+    // основной ряд на графике (синего цвета)
     LeCharterinoBarSeries1: TBarSeries;
+    // ряд для элемента C (красный)
     LeCharterinoBarSeries2: TBarSeries;
     procedure BtnClearClick(Sender: TObject);
     procedure BtnExitClick(Sender: TObject);
