@@ -63,21 +63,8 @@ begin
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
-var
-  year: word;
-  myCaption: string;
-  captions: array[0..4] of String = (
-  'Bruh',
-  'Ronald Topala did not die for this',
-  'Really dingles my berries',
-  'M. A. is really proud',
-  'A true society moment'
-  );
 begin
   Randomize();
-  year := currentyear();
-  myCaption := 'Pascal in ' + inttostr(year) + '?' + ' ' + captions[Random(5)];
-  caption := myCaption;
 end;
 
 
