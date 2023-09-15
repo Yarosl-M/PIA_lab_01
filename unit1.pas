@@ -13,10 +13,11 @@ type
   { TForm1 }
 
   TForm1 = class(TForm)
+    BtnFindC: TButton;
     BtnGenerate: TButton;
     BtnExit: TButton;
     BtnClear: TButton;
-    BtnFindC: TButton;
+    BtnChart: TButton;
     LeCharterino: TChart;
     Label1: TLabel;
     Label2: TLabel;
@@ -28,6 +29,7 @@ type
     LeCharterinoBarSeries2: TBarSeries;
     procedure BtnClearClick(Sender: TObject);
     procedure BtnExitClick(Sender: TObject);
+    procedure BtnChartClick(Sender: TObject);
     procedure BtnFindCClick(Sender: TObject);
     procedure BtnGenerateClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -68,10 +70,19 @@ begin
 end;
 
 
-
 procedure TForm1.BtnExitClick(Sender: TObject);
 begin
   Close();
+end;
+
+procedure TForm1.BtnChartClick(Sender: TObject);
+var
+  i: integer;
+begin
+  LeCharterinoBarSeries1.Clear;
+  LeCharterinoBarSeries2.Clear;
+  for i := 0 to 29 do
+      LeCharterinoBarSeries1.Add(MainArr[i], IntToStr(MainArr[i]));
 end;
 
 procedure TForm1.BtnFindCClick(Sender: TObject);
@@ -126,6 +137,7 @@ begin
     ArrTable.Cells[CellCol(i), CellRow(i)] := '';
   end;
   //BtnChart.Enabled := false;
+  BtnChart.Enabled := false;
   BtnFindC.Enabled := false;
   LabelC.Caption := 'C =';
 end;
@@ -134,13 +146,17 @@ procedure TForm1.BtnGenerateClick(Sender: TObject);
 var
   i : integer;
 begin
+  LeCharterinoBarSeries1.Clear;
+  LeCharterinoBarSeries2.Clear;
   for i := 0 to 29 do
   begin
     MainArr[i] := Random(B - A + 1) + A;
     ArrTable.Cells[CellCol(i), CellRow(i)] := inttostr(MainArr[i]);
   end;
   //BtnChart.Enabled := true;
+  BtnChart.Enabled := true;
   BtnFindC.Enabled := true;
+  LabelC.Caption := 'C =';
 end;
 
 end.
