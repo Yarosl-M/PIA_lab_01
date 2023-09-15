@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Grids,
-  RTTIGrids, TAGraph, Math;
+  RTTIGrids, TAGraph, TASeries, Math;
 
 type
 
@@ -25,6 +25,8 @@ type
     LabelC: TLabel;
     Label5: TLabel;
     ArrTable: TStringGrid;
+    LeCharterinoBarSeries1: TBarSeries;
+    LeCharterinoBarSeries2: TBarSeries;
     procedure BtnClearClick(Sender: TObject);
     procedure BtnExitClick(Sender: TObject);
     procedure BtnFindCClick(Sender: TObject);
@@ -105,6 +107,15 @@ begin
   end;
   C := MainArr[minDistIndex];
   LabelC.Caption := 'C = ' + inttostr(C);
+
+  LeCharterinoBarSeries1.Clear;
+  for i := 0 to 29 do
+  begin
+    if i = minDistIndex then
+      LeCharterinoBarSeries1.Add(0)
+    else
+      LeCharterinoBarSeries1.Add(MainArr[i], IntToStr(MainArr[i]));
+  end;
 end;
 
 procedure TForm1.BtnClearClick(Sender: TObject);
