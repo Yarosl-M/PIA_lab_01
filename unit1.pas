@@ -108,12 +108,23 @@ begin
   LabelC.Caption := 'C = ' + inttostr(C);
 
   LeCharterinoBarSeries1.Clear;
+  LeCharterinoBarSeries2.Clear;
   for i := 0 to 29 do
   begin
     if i = minDistIndex then
       LeCharterinoBarSeries1.Add(0)
     else
       LeCharterinoBarSeries1.Add(MainArr[i], IntToStr(MainArr[i]));
+  end;
+  for i := 0 to 29 do
+  begin
+    if i = minDistIndex then
+    begin
+      LeCharterinoBarSeries2.Add(MainArr[minDistIndex], IntToStr(MainArr[minDistIndex]));
+      Break;
+    end
+    else
+    LeCharterinoBarSeries2.Add(0);
   end;
 end;
 
