@@ -119,6 +119,8 @@ procedure TForm1.BtnClearClick(Sender: TObject);
 var
   i: integer;
 begin
+  LeCharterinoBarSeries1.Clear;
+  LeCharterinoBarSeries2.Clear;
   for i := 0 to 29 do
   begin
     ArrTable.Cells[CellCol(i), CellRow(i)] := '';
