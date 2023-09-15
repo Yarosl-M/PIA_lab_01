@@ -125,7 +125,7 @@ begin
   begin
     ArrTable.Cells[CellCol(i), CellRow(i)] := '';
   end;
-  BtnChart.Enabled := false;
+  //BtnChart.Enabled := false;
   BtnFindC.Enabled := false;
   LabelC.Caption := 'C =';
 end;
@@ -139,7 +139,7 @@ begin
     MainArr[i] := Random(B - A + 1) + A;
     ArrTable.Cells[CellCol(i), CellRow(i)] := inttostr(MainArr[i]);
   end;
-  BtnChart.Enabled := true;
+  //BtnChart.Enabled := true;
   BtnFindC.Enabled := true;
 end;
 
