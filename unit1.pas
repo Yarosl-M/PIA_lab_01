@@ -16,7 +16,6 @@ type
     BtnGenerate: TButton;
     BtnExit: TButton;
     BtnClear: TButton;
-    BtnChart: TButton;
     BtnFindC: TButton;
     LeCharterino: TChart;
     Label1: TLabel;
